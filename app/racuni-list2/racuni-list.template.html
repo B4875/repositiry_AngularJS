@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<div class="container-fluid">
+
+   <div class="center-outer fit">
+      <div class="center-inner">
+        <div class="example-window" role="main">
+             <ul style="visible:false;" class="example-selector"></ul>
+        </div>
+      </div>
+    </div>
+
+  <div class="row">
+<!--	<div style="max-width:"300px;margin:0 auto">	-->
+<!--	<img  class="images" src="logo1.png"/>	-->
+
+    <div class="col-md-3" ng-style="style1" style="height:1000px;background-color:#1c87c9;min-width:200px;margin:0 auto">
+<!--<style>
+    .my-custom-width{
+       width:300px;
+    }
+</style>	-->
+      <!--Sidebar content-->
+ <table>
+<!--<td bgcolor="#FFFFFF" style="line-height:10px;" colspan="3">&nbsp;</td>-->
+<td style="line-height:10px;" colspan="4">&nbsp;</td>
+<tr><td style="width:60px; height:10px;" colspan="2";><button ng-style="style4" ng-click="navodila()" class="btn btn-primary btn-xs">Kratka navodila in opis funkcij</button></td></tr>
+<td style="line-height:20px;" colspan="4">&nbsp;</td>
+<tr><td style="width:80px";>Username:</td><td><input type="text" name="datumMesec1" style="width:140px;" ng-model="uporabnik.uporabnik"></td></tr>
+<tr><td>Password:</td><td><input type="password" name="datumMesec1" style="width:140px;" ng-model="uporabnik.uporabnikp"></td></tr>
+
+<td style="line-height:15px;" colspan="4">&nbsp;</td>
+<table>
+<tr><td style="width:60px; height:10px;";>
+<button ng-style="style4" ng-click="login(uporabnik)" class="btn btn-primary btn-xs">Login</button></td>
+<td style="width:60px";><button ng-style="style4" ng-click="logout(uporabnik)" class="btn btn-primary btn-xs">Logout</button></td>
+<td style="width:30px";><button ng-style="style4" ng-click="protected()" class="btn btn-primary btn-xs">?</button></td>
+</table>
+</br>
+<table>
+<tr><td>Password(retype):</td><td><input type="password" name="datumMesec1" style="width:140px;" ng-model="uporabnik.uporabnikp2"></td></tr>
+<tr><td style="height:30px;";>Min 8 Max 20 ch.</td>
+<td><button ng-style="style4" ng-click="kreirajuporabnika(uporabnik)" class="btn btn-primary btn-xs">Create User</button></td>
+</tr></table>
+
+</table> 
+
+<br/><br/><br/>
+      <p>
+        Search:
+        <input ng-model="$ctrl.query" style="width:150px"/>
+      </p>
+      <p>
+        Sort by:
+        <!-- <select ng-model="$ctrl.orderProp " style="width:150px"><option value="DOKU">doku</option><option value="IME">ime</option><option value="PLACILO">placilo</option></select>  -->
+		  <select ng-init="$ctrl.orderProp='DOKU'" ng-model="$ctrl.orderProp" style="width:150px"><option value="DOKU" selected>+doku</option><option value="IME">+ime</option><option value="DGMPV">+znesek</option><option value="DATK">+datum</option><option value="-DOKU">-doku</option><option value="-IME">-ime</option><option value="-DGMPV">-znesek</option><option value="-DATK">-datum</option></select> 
+      </p>
+<table>
+<!--<td bgcolor="#FFFFFF" style="line-height:10px;" colspan="3">&nbsp;</td>-->
+<td style="line-height:35px;" colspan="4">&nbsp;</td>
+<tr><td>Neplacano:</td><td><input type="text" name="datumMesec1" style="width:50px;" ng-model="$ctrl.datum.neplac"></td></tr>
+<tr><td>Mesec1:</td><td><input type="text" name="datumMesec1" style="width:50px;" ng-model="$ctrl.datum.mesec1"></td></tr>
+<tr><td>Leto1:</td><td><input type="text" name="datumLeto1" style="width:50px;" ng-model="$ctrl.datum.leto1"></td></tr>
+<tr><td>Mesec2:</td><td><input type="text" name="datumMesec2" style="width:50px;" ng-model="$ctrl.datum.mesec2"></td></tr>
+<tr><td>Leto2:</td><td><input type="text" name="datumLeto2" style="width:50px;" ng-model="$ctrl.datum.leto2"></td></tr>
+<td style="line-height:15px;" colspan="4">&nbsp;</td>
+<tr><td colspan="4">
+<button ng-style="style4" ng-click="reload_page3($ctrl.datum)" class="btn btn-primary btn-xs">W</button>
+<button ng-style="style4" ng-click="reload_page2($ctrl.datum)" class="btn btn-primary btn-xs">P</button>
+<button ng-style="style4" ng-click="reload_page1($ctrl.datum)" class="btn btn-primary btn-xs">-</button>
+<button ng-style="style4" ng-click="samo_racuni($ctrl.datum)" class="btn btn-primary btn-xs">Osnovni pogled</button></td>
+</tr>
+<!--   <tr><td><a ng-href="{{myVar}}">"Dodaj račun"</a></td></tr>  -->
+<td style="line-height:50px;" colspan="4">&nbsp;</td>
+	<tr><td colspan="4"><table>
+	<td><button ng-style="style4" ng-click="mpodatki()" class="btn btn-primary btn-xs">Moji podatki</button></td>
+	</td></table></td></tr>
+	<tr><td colspan="4"><table>
+	<td><button ng-style="style4" ng-click="sporocila()" class="btn btn-primary btn-xs">Sporočila</button></td>
+	</td></table></td></tr>	
+	<tr><td colspan="4"><table>
+	<td><button ng-style="style4" ng-click="nov_racun3()" class="btn btn-primary btn-xs">W</button>
+	<td><button ng-style="style4" ng-click="nov_racun2()" class="btn btn-primary btn-xs">Nov Račun</button></td>
+	<td><button ng-style="style4" ng-click="nov_racun1()" class="btn btn-primary btn-xs">-</button></td>
+	</td></table></td></tr>
+	<tr><td colspan="4"><table>
+	<td><button ng-style="style4" ng-click="partnerji3($ctrl.datum)" class="btn btn-primary btn-xs">W</button>
+	<td><button ng-style="style4" ng-click="partnerji2($ctrl.datum)" class="btn btn-primary btn-xs">Partnerji</button></td>
+	<td><button ng-style="style4" ng-click="partnerji1($ctrl.datum)" class="btn btn-primary btn-xs">-</button></td>
+	</td></table></tr>
+	<tr><td colspan="4"><table>
+	<td><button ng-style="style4" ng-click="partnerji6($ctrl.datum)" class="btn btn-primary btn-xs">W</button>
+	<td><button ng-style="style4" ng-click="partnerji5($ctrl.datum)" class="btn btn-primary btn-xs">P.Filter</button></td>
+	<td><button ng-style="style4" ng-click="partnerji4($ctrl.datum)" class="btn btn-primary btn-xs">-</button></td>
+	</td></table></tr>
+	<tr><td colspan="4"><table>
+	<td><button ng-style="style4" ng-click="partnerji9($ctrl.datum)" class="btn btn-primary btn-xs">W</button>
+	<td><button ng-style="style4" ng-click="partnerji8($ctrl.datum)" class="btn btn-primary btn-xs">Klavzule</button></td>
+	<td><button ng-style="style4" ng-click="partnerji7($ctrl.datum)" class="btn btn-primary btn-xs">-</button></td>
+	</td></table></tr>
+	<tr><td><button ng-style="style4" ng-click="predracuni($ctrl.datum)" class="btn btn-primary btn-xs">Predračuni</button>
+
+<!--	<tr><td><button ng-click="samo_racuni($ctrl.datum)" class="btn btn-primary btn-xs">Računi (seznam)</button></td></tr> -->
+	<tr><td><button ng-style="style4" ng-click="racuni12($ctrl.datum)" class="btn btn-primary btn-xs">12</button>
+	<button ng-style="style4" ng-click="racuni12gr($ctrl.datum)" class="btn btn-primary btn-xs">12gr</button>
+	<button ng-style="style4" ng-click="racuni100($ctrl.datum)" class="btn btn-primary btn-xs">100</button></td></tr>
+<!--	<tr><td><button ng-style="style4" ng-click="racuniP($ctrl.datum)" class="btn btn-primary btn-xs">Računi P</button></td></tr>
+-->
+
+	<tr><td colspan="4"><table>
+	<td><button ng-style="style4" ng-disabled='true' ng-click="nov_racun3()" class="btn btn-primary btn-xs">CTRL</button>
+	<td><button ng-style="style4" ng-disabled='true' ng-click="nov_racun2()" class="btn btn-primary btn-xs">SHIFT</button></td>
+	<td><button ng-style="style4" ng-disabled='true' ng-click="nov_racun1()" class="btn btn-primary btn-xs">K</button></td>
+	</td></table></tr>
+	
+
+</table> 
+
+
+
+    </div>
+    <div class="col-md-9">
+<!--	<iframe id="pdf" style="width: 100%; height: 100%;"></iframe>	-->
+      <!--Body content-->
+		<!--	<input type="text" ng-model="leto1"/>	-->
+		<pre ng-style="style2" style="background-color:#1c87c9;">{{" (" + racunilist.length + ") " + "LETO1:" + $ctrl.l1 + "  MESEC1:" + $ctrl.m1 + "     -    " + "  LETO2:" +$ctrl.l2+ "  MESEC2:" + $ctrl.m2}}</pre>
+ 
+      <table border="1">
+        <tbody ng-repeat="racun in racunilist | filter:$ctrl.query | orderBy:$ctrl.orderProp track by $index">
+          <tr ng-style="style3" style="background-color:#50c0f4;" height="40px">
+            <td  align="right" style="width:100px;">{{racun.DOKU}}</td>
+            <td align="center" style="width:90px;">{{racun.DATP.substr(0,10)}}</td>
+            <!--  <td>{{racun.IME + " (".padStart(50-racun.IME.length,".....") + racun.PART + ")"}}</td> -->
+			<td><table><tr>
+			  <td style="font-weight:bold;width:270px">{{(racun.IME)}}</td>
+			  <td align="right" style="width:70px;">{{"(" + (racun.PARTN) + ")"}}</td>
+			  <td align="right" style="width:5px;">{{}}</td>
+			</tr></table></td>
+			  <td align="right" style="width:100px;"></td>
+			  <td style="width:100px;">{{racun.DOKUPRED}}</td>
+			  <td align="right" style="width:100px;">{{racun.DGMPV+ " €"}}</td>
+		<td><input type="button" ng-style="style4" style="background-color:#007BFF" class="btn btn-primary btn-xs" value="->" ng-click="GetDetails(racun.DOKU)" /></td>
+	
+		<td><input type="button" ng-style="style4" class="btn btn-primary btn-xs" value="r" ng-click="GetDetailsR(racun, uporabnik)" /></td>
+		<td><input type="button" ng-style="style4" class="btn btn-primary btn-xs" value="d" ng-click="GetDetailsD(racun, uporabnik)" /></td>
+		<td><input type="button" ng-style="style4" class="btn btn-primary btn-xs" value="R" ng-click="GetDetailsRG(racun, uporabnik)" /></td>
+		<td><input type="button" ng-style="style4" class="btn btn-primary btn-xs" value="D" ng-click="GetDetailsDG(racun, uporabnik)" /></td>
+		
+		
+		<td><input type="button"  ng-style="style4" class="btn btn-primary btn-xs" value="K" ng-click="GetDetailsK(racun.DOKU)" /></td>
+		
+
+          </tr>
+        </tbody>
+   
+      </table>
+    </div>
+  </div>
+</div>

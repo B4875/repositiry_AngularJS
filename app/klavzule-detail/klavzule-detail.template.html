@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for HTML5 for Linux version 5.6.0">
+  <title></title>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-10" style="height:800px;width:880px;">
+        <!--Body content-->
+        <!--    <input type="text" ng-model="leto1"/>   -->
+        <pre ng-style="style2" style=
+        "background-color:#1c87c9;">{{"username: " + uporabnik.uporabnik + publicReadOnly}}</pre>
+        <pre ng-style="style2" style=
+        "background-color:#1c87c9;">{{ "ID:" + PA0[0].ID}}</pre>
+        <!--    <div class="row" style="justify-content:center;">       -->
+        <!--            <div ng-style="style3" class="col-md-8" style="height:765px;width:610px;background-color:#1c00c9;">     -->
+        <div ng-style="style3" style=
+        "height:765px;background-color:#1c00c9;">
+          <p>Oznaka:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"
+          style="width:100px;" ng-model="PA0[0].OZNAKA"> Leto (00 -
+          neaktivno):&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"
+          style="width:50px;" ng-model="PA0[0].LETO">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button ng-click="sendData(uporabnik)" ng-show=
+          "disabledDokuZapShow" ng-disabled="disabledDokuZap"
+          ng-init="count=0">{{zapisi}}</button></p>
+          <p>Tekst (vrstica1):<input type="text" style=
+          "width:800px;" ng-model="PA0[0].TEKST1"></p>
+          <p>Tekst (vrstica2):<input type="text" style=
+          "width:800px;" ng-model="PA0[0].TEKST2"></p>
+          <p>Tekst (vrstica3):<input type="text" style=
+          "width:800px;" ng-model="PA0[0].TEKST3"></p>
+          <p>Tekst (vrstica4):<input type="text" style=
+          "width:800px;" ng-model="PA0[0].TEKST4"></p>
+          <p>Tekst (vrstica5):<input type="text" style=
+          "width:800px;" ng-model="PA0[0].TEKST5"></p>
+          <p><button ng-click="sendDataDel(uporabnik)" ng-show=
+          "disabledDokuDelShow" ng-disabled="disabledDokuDel"
+          ng-init="count=0">{{"zbrisi klavzulo"}}</button></p>
+          <table border="1">
+            <!--    </br><p>id:<input type="text" name="userId" ng-disabled="true" ng-model="PA0[0].ID">    -->
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2" ng-style="style1" style="height:1000px;width:170px;background-color:#1c87c9;">
+      <!--Sidebar content-->
+      <p>
+        Search:
+        <input ng-model="$ctrl.query" style="width:150px"/>
+</p>
+<p>&nbsp</p>
+      <div style=" background-color:#FFFFFF">
+	      <p>&nbsp</p>
+	      <p style="color:#1111AA">&nbsp&nbsp&#x2585 vsi</p>
+	      <p style="color:#1d9010">&nbsp&nbsp&#x2585 plačani</p>
+	      <p style="color:#c9243c">&nbsp&nbsp&#x2585 neplačani</p>
+	      <p>&nbsp</p>
+	</div>
+	      <p>
+	      <!--Sort by:-->
+	<!-- <select ng-model="$ctrl.orderProp " style="width:150px"><option value="DOKU">doku</option><option value="IME">ime</option><option value="PLACILO">placilo</option></select>  -->
+	<!--
+		<select ng-init="$ctrl.orderProp='S.MN'" ng-model="$ctrl.orderProp" style="width:150px"><option value="S.MN" selected>+doku</option><option value="S.M">+ime</option><option value="S.S3[0]">+znesek</option><option value="S.S3[1]">+neplac</option><option value="S.S3[2]">+plac</option><option value="S.S3[3]">+st.r.</option><option value="S.S3[4]">+l.min</option><option value="S.S3[5]">+l.max</option><option value="S.S3[5]-S.S3[4]">+let</option><option value="-S.MN">-doku</option><option value="-S.M">-ime</option><option value="-S.S3[0]">-znesek</option><option value="-S.S3[1]">-neplac</option><option value="-S.S3[2]">-plac</option><option value="-S.S3[3]">-st.r.</option><option value="-S.S3[4]">-l.min</option><option value="-S.S3[5]">-l.max</option><option value="-(S.S3[5]-S.S3[4])">-let</option></select> 
+	-->
+		</p>
+<table>
+<!--<td bgcolor="#FFFFFF" style="line-height:10px;" colspan=3>&nbsp;</td>-->
+<td style="line-height:50px;" colspan=2>&nbsp;</td>
+<!--
+<tr><td>Mesec1:</td><td><input type="text" name="datumMesec1" style="width:50px;" ng-model="$ctrl.datum.mesec1"></td></tr>
+<tr><td>Leto1:</td><td><input type="text" name="datumLeto1" style="width:50px;" ng-model="$ctrl.datum.leto1"></td></tr>
+<tr><td>Mesec2:</td><td><input type="text" name="datumMesec2" style="width:50px;" ng-model="$ctrl.datum.mesec2"></td></tr>
+<tr><td>Leto2:</td><td><input type="text" name="datumLeto2" style="width:50px;" ng-model="$ctrl.datum.leto2"></td></tr>
+<td style="line-height:15px;" colspan=2>&nbsp;</td>
+<tr><td colspan="2">
+<button ng-click="reload_page1($ctrl.datum)" class="btn btn-primary btn-xs">-></button>
+<button ng-click="reload_page2($ctrl.datum)" class="btn btn-primary btn-xs">P</button>
+<button ng-click="reload_page3($ctrl.datum)" class="btn btn-primary btn-xs">W</button></td>
+</tr>
+-->
+<!--   <tr><td><a ng-href="{{myVar}}">"Dodaj račun"</a></td></tr>  -->
+<td style="line-height:50px;" colspan=2>&nbsp;</td>
+<!--
+	<tr><td><button ng-click="nov_racun()" class="btn btn-primary btn-xs">Nov Račun</button></td></td></tr>
+	<tr><td><button ng-click="partnerji($ctrl.datum)" class="btn btn-primary btn-xs">Partnerji</button></td></td></tr>
+	<tr><td><button ng-click="samo_racuni($ctrl.datum)" class="btn btn-primary btn-xs">Računi (seznam)</button></td></td></tr>
+-->
+</table> 
+
+<!--	<div ng-app ng-controller="Racuni">-->
+<!--	    <input type="text" placeholder="0" ng-model="deposit" />&#8364;</br> -->
+<!--	</div>	-->
+
+
+    </div>
+    <div class="col-md-10">
+
+      <!--Body content-->
+		<!--	<input type="text" ng-model="leto1"/>	-->
+		<pre ng-style="style2" style="background-color:#1c87c9;">{{" (" + $ctrl.racuni12.length + ") " + "LETO1:" + $ctrl.l1 + "  MESEC1:" + $ctrl.m1 + "     -    " + "  LETO2:" +$ctrl.l2+ "  MESEC2:" + $ctrl.m2}}</pre>
+
+     <table border="1">
+        <tbody ng-repeat="racun in racuni12.S0.S12">
+	<tr>
+	<td rowspan="3">
+<!--		{{racun.S.M}}	-->
+		<pre style="padding: 0px; margin: 0px; background-color:#1c87c9; width:{{(racun.SX.S3[0]*100/racuni12.S0.S.S)*8}}px;">{{racun.SX.S3[0]}}</pre>
+		<pre style="padding: 0px; margin: 0px; background-color:#1d9010; width:{{(racun.SX.S3[2]*100/racuni12.S0.S.S)*8}}px;">{{racun.SX.S3[2]}}</pre>
+		<pre style="padding: 0px; margin: 0px; background-color:#c9243c; width:{{(racun.SX.S3[1]*100/racuni12.S0.S.S)*8}}px;">{{racun.SX.S3[1]}}</pre>
+	</td>
+	<td align = "center">
+		{{(racun.SX.M)}}
+	</td>
+	</tr>
+	<tr>
+	<td align="right">
+		{{(racun.SX.N1 + "," + racun.SX.N2 + "." + racun.SX.N3)}}
+	</td>
+	</tr>
+	<tr>
+	<td align="right">
+		{{(racun.SX.S3[1])}}
+	</td>
+	</tr>
+	</tbody>
+     </table>
+ 
+	<li class="animate-repeat" ng-repeat="racun in $ctrl.racuni12.S.S12">
+<!--		<pre style="padding: 0px; margin: 0px; background-color:#1c87c9; width:400px;">{{"LETO1:"}}</pre>	-->
+		<pre style="padding: 0px; margin: 0px; background-color:#1c87c9; width:{{(racun.S.S3[0]*100/10000)*8}}px;">{{racun.S.S3[1]}}</pre><p style="padding: 0px; margin: 0px;">{{(racun.S.S3[0]*100/10000)}}</p>
+		<pre style="padding: 0px; margin: 0px; background-color:#1d9010; width:300px;">{{"LETO1:"}}</pre>
+		<pre style="background-color:#c9243c; width:100px;">{{"LETO1:"}}</pre>
+	</li>
+
+	<!--
+		<pre style="padding: 0px; margin: 0px; background-color:#2729a2; width:400px;">{{"LETO1:"}}</pre>
+		<pre style="padding: 0px; margin: 0px; background-color:#33bf4c; width:300px;">{{"LETO1:"}}</pre>
+		<pre style="background-color:#ee0a0a; width:100px;">{{"LETO1:"}}</pre>
+	-->
+
+  
+    </div>
+  </div>
+</div>

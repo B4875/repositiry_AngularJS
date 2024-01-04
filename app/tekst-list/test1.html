@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<?xml version="1.0"?><html><body>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2" ng-style="style1" style="height:800px;width:180px;background-color:#1c87c9;">
+      <!--Sidebar content-->
+      <table>
+      <td style="line-height:20px;" colspan="4">&nbsp;</td>
+      <tr><td style="width:80px">Username:</td></tr>
+<tr><td><input type="text" name="datumMesec1" ng-disabled="true" style="width:140px;" ng-model="uporabnik.uporabnik"></td></tr>
+      <td style="line-height:50px;" colspan="4">&nbsp;</td>
+      </table>
+      <p>
+        Search:
+        <input ng-model="$ctrl.query" style="width:150px">
+      </p>
+      <p>
+        Sort by:
+		  <select ng-init="$ctrl.orderProp='-ID'" ng-model="$ctrl.orderProp " style="width:150px"><option value="ID">+id</option>
+<option value="OZNAKA">+oznaka</option>
+<option value="-DAT">+datum</option>
+<option value="TEKST11">+tekst</option>
+<option value="USER">+uporabnik</option>
+<option value="-ID">-id</option>
+<option value="-OZNAKA">-oznaka</option>
+<option value="+DAT">-datum</option>
+<option value="-TEKST11">-tekst</option>
+<option value="-USER">-uporabnik</option></select> 
+      </p>
+
+<table>
+<td style="line-height:50px;" colspan="2">&nbsp;</td>
+
+<td style="line-height:15px;" colspan="2">&nbsp;</td>
+<tr>
+<td colspan="2">
+
+
+</td>
+<td style="line-height:50px;" colspan="2">&nbsp;</td>
+	</tr>
+<tr><td><button ng-style="style4" ng-click="nov_tekst($ctrl.datum)" class="btn btn-primary btn-xs">Novo Sporo&#269;ilo</button></td></tr>
+</table> 
+ 
+    </div>
+    <div class="col-md-10">
+      <!--Body content-->
+		<!--	<input type="text" ng-model="leto1"/>	-->
+
+		<pre ng-style="style2" style="background-color:#1c87c9;">sporo&#269;ila</pre>
+
+ 
+      <table border="1">
+      <thead>
+        <tr>
+<th style="text-align:center">id</th>
+<th style="text-align:center">oznaka</th>
+<th style="text-align:center">datum</th>
+<th style="text-align:center">tekst</th>
+<th style="text-align:center">uporabnik</th>
+</tr>
+        </thead>
+        <tbody ng-repeat="tekst in tekstlist | filter:$ctrl.query | orderBy:$ctrl.orderProp">
+          <tr ng-style="style3" style="background-color:#50c0f4;" height="40px">
+            <td align="right" style="width:100px;">{{tekst.ID}}</td>
+            <td align="left" style="width:30px;">{{tekst.OZNAKA}}</td>
+            <td align="left" style="width:50px;">{{(tekst.DAT.d)}}</td>            
+            <td align="left" style="width:600px;">{{(tekst.TEKST11)}}</td>
+            <td align="left" style="width:60px;">{{(tekst.USER)}}</td>
+
+<td><button ng-style="style4" ng-click="get_details(tekst.ID)" class="btn btn-primary btn-xs">-&gt;</button></td>
+
+        </tr>
+</tbody>
+ 
+      </table>
+    </div>
+  </div>
+</div>
+</body></html>

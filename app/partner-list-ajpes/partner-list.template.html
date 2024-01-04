@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2" style="height:800px;width:180px;background-color:#1c87c9;">
+      <!--Sidebar content-->
+      <p>
+        Search:
+        <input ng-model="$ctrl.query" style="width:150px"/>
+      </p>
+      <p>
+        Sort by:
+        <!-- <select ng-model="$ctrl.orderProp " style="width:150px"><option value="DOKU">doku</option><option value="IME">ime</option><option value="PLACILO">placilo</option></select>  -->
+	<select ng-model="$ctrl.orderProp " ng-init="$ctrl.orderProp='dat'" style="width:150px"><option value="str.str0">dat</option><option value="str.str1">tip</option><option value="str.str2">postopek</option><option value="str.str3">naziv</option><option value="str3.str4">MS</option><option value="str.str5">DS<option><option value="-str.str0">-dat</option><option value="-str.str1">-tip</option><option value="-str.str2">-postopek</option><option value="-str.str3">-naziv</option><option value="-str3.str4">-MS</option><option value="-str.str5">-DS<option></select> 
+      </p>
+ 
+    </div>
+    <div class="col-md-10">
+      <!--Body content-->
+		<!--	<input type="text" ng-model="leto1"/>	-->
+		<pre style="background-color:#1c87c9;">{{"ISKANEJE PO NAZIVU: " + nazivP}}</pre>
+		
+		<pre style="background-color:#1c87c9;">{{"Objave sklepov (za pravne osebe) izdanih v postopkih zaradi insolventnosti (objavljeno) " + "od:" + dateNow1 + "  do:" + dateNow2 + "     (" + data.length + ") "}}</pre>
+ 
+      <table border="1">
+<!--        <tbody ng-repeat="partner in data track by $index | filter:$ctrl.query | orderBy:$ctrl.orderProp"> -->
+        <tbody ng-repeat="partner in data |  orderBy:$ctrl.orderProp | filter:$ctrl.query track by $index">
+          <tr style="background-color:#50c0f4;" height="40px">
+                      <td  align="right" style="width:100px;">{{partner.str.str0}}</td>
+                      <td  align="right" style="width:300px;">{{partner.str.str1}}</td>
+                      <td  align="right" style="width:100px;">{{partner.str.str2}}</td>                      
+                      <td  align="right" style="width:300px;">{{partner.str.str3}}</td>                      
+                      <td  align="right" style="width:100px;">{{partner.str.str4}}</td>                      
+                      <td  align="right" style="width:100px;">{{partner.str.str5}}</td>
+                      <td  align="right" style="width:100px;">{{partner.str.str7}}</td>
+                      <td  align="right" style="width:100px;">{{partner.str.str8}}</td>                                                                                        
+			  
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

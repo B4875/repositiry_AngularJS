@@ -1,0 +1,17 @@
+on: push
+name: FTP deploy
+jobs:
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2.3.2
+    
+    - name: FTP-Deploy-Action
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      with:
+        server: testatnet5.com
+        username: testatnet5
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: dist/
+        server-dir: cookies-consent/

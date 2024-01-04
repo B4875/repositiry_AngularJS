@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2" ng-style="style1" style="height:800px;width:180px;background-color:#1c87c9;">
+      <!--Sidebar content-->
+      <table>
+      <td style="line-height:20px;" colspan="4">&nbsp;</td>
+      <tr><td style="width:80px";>Username:</td></tr><tr><td><input type="text" name="datumMesec1"  ng-disabled="true" style="width:140px;" ng-model="uporabnik.uporabnik"></td></tr>
+      <td style="line-height:50px;" colspan="4">&nbsp;</td>
+      </table>
+
+      <p>
+        Search:
+        <input ng-model="$ctrl.query" style="width:150px"/>
+      </p>
+      <p>
+        Sort by:
+
+	<select ng-init="$ctrl.orderProp='ID'" ng-model="$ctrl.orderProp " style="width:150px"><option value="ID">id</option><option value="NAZIV">naziv</option><option value="KONT_OS">kont_os</option><option value="KRAJ1">kraj</option><option value="NASLOV1">naslov</option> <option value="-ID">-id</option><option value="-NAZIV">-naziv</option><option value="-KONT_OS">-kont_os</option><option value="-KRAJ1">-kraj</option><option value="-NASLOV1">-naslov</option></select>
+      </p>
+
+<table>
+<!--<td bgcolor="#FFFFFF" style="line-height:10px;" colspan=3>&nbsp;</td>-->
+<td style="line-height:50px;" colspan=2>&nbsp;</td>
+<tr><td>Mesec1:</td><td><input type="text" name="datumMesec1" style="width:50px;" ng-model="$ctrl.datum.mesec1"></td></tr>
+<tr><td>Leto1:</td><td><input type="text" name="datumLeto1" style="width:50px;" ng-model="$ctrl.datum.leto1"></td></tr>
+<tr><td>Mesec2:</td><td><input type="text" name="datumMesec2" style="width:50px;" ng-model="$ctrl.datum.mesec2"></td></tr>
+<tr><td>Leto2:</td><td><input type="text" name="datumLeto2" style="width:50px;" ng-model="$ctrl.datum.leto2"></td></tr>
+<td style="line-height:15px;" colspan=2>&nbsp;</td>
+<tr><td colspan="2">
+
+
+<td style="line-height:40px;" colspan=2>&nbsp;</td>
+	<tr><td><button ng-style="style4" ng-click="nov_partner($ctrl.datum)" class="btn btn-primary btn-xs">Nov Partner</button></td></td></tr>
+	
+ <td style="line-height:40px;" colspan=2>&nbsp;</td>	
+<tr><td style="width:80px";>Naziv (celoten!):</td></tr>
+<tr><td colspan=2><input type="text" name="datumMesec1"  ng-disabled="false" style="width:140px;" ng-model="ajpes.naziv"></td></tr>
+<td style="line-height:10px;" colspan=2>&nbsp;</td>
+	<tr><td><button ng-style="style4" ng-click="preveri_ajpes(1, ajpes.naziv, ajpes0.ddavcna, ajpes0.mat)" class="btn btn-primary btn-xs">Preveri po AJPES</button></td></td></tr>
+	
+ <td style="line-height:20px;" colspan=2>&nbsp;</td>	
+<tr><td style="width:80px";>Davčna št.::</td></tr>
+<tr><td colspan=2><input type="text" name="datumMesec1"  ng-disabled="false" style="width:140px;" ng-model="ajpes.ddavcna"></td></tr>
+<td style="line-height:10px;" colspan=2>&nbsp;</td>
+	<tr><td><button ng-style="style4" ng-click="preveri_ajpes(2, ajpes0.naziv, ajpes.ddavcna, ajpes0.mat)" class="btn btn-primary btn-xs">Preveri po AJPES</button></td></td></tr>
+
+ <td style="line-height:20px;" colspan=2>&nbsp;</td>	
+<tr><td style="width:80px";>Matična št.::</td></tr>
+<tr><td colspan=2><input type="text" name="datumMesec1"  ng-disabled="false" style="width:140px;" ng-model="ajpes.mat"></td></tr>
+<td style="line-height:10px;" colspan=2>&nbsp;</td>
+	<tr><td><button ng-style="style4" ng-click="preveri_ajpes(3, ajpes0.naziv, ajpes0.ddavcna, ajpes.mat)" class="btn btn-primary btn-xs">Preveri po AJPES</button></td></td></tr>
+
+	
+</table> 
+ 
+    </div>
+    <div class="col-md-10">
+      <!--Body content-->
+		<!--	<input type="text" ng-model="leto1"/>	-->
+		<pre ng-style="style2" style="background-color:#1c87c9;">{{" (" + partnerji.length + ") " + "LETO1:" + $ctrl.l1 + "  MESEC1:" + $ctrl.m1 + "     -    " + "  LETO2:" +$ctrl.l2+ "  MESEC2:" + $ctrl.m2}}</pre>
+ 
+      <table border="1">
+        <tbody ng-repeat="partner in partnerji | filter:$ctrl.query | orderBy:$ctrl.orderProp">
+          <tr ng-style="style3" style="background-color:#50c0f4;" height="40px">
+            <td  align="right" style="width:100px;">{{partner.ID}}</td>
+            <td  align="right" style="width:100px;">{{partner.NAZIV}}</td>
+            <td  align="right" style="width:100px;">{{partner.KRAJ1 + " " +partner.KRAJ1ST}}</td>
+            <td  align="right" style="width:100px;">{{partner.NASLOV1 + " " + partner.NASLOV1ST}}</td>
+            <td  align="right" style="width:100px;">{{partner.KONT_OS}}</td>
+            <td  align="right" style="width:80px;">{{partner.DDAVCNA}}</td>
+           <td  align="right" style="width:100px;">{{partner.MAT}}</td>
+<!--            <td  align="right" style="width:100px;">{{partner.DDVVST}}</td>	-->
+            <td  align="right" style="width:100px;">{{partner.TELEFON1}}</td>
+<!--            <td  align="right" style="width:100px;">{{partner.TELEFON2}}</td>	-->
+            <td  align="right" style="width:100px;">{{partner.OPOMBA1}}</td>
+<td style="width:60px"; align="center"><button ng-style="style4" ng-click="get_details(partner.ID)" class="btn btn-primary btn-xs"> -> </button></td>
+<td style="width:130px;" align="center"><button ng-style="style4" ng-click="preveri_ajpes(0, partner.NAZIV, partner.DDAVCNA, partner.MAT)" class="btn btn-primary btn-xs"> preveri po AJPES </button></td>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

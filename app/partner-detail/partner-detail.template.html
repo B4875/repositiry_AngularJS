@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for HTML5 for Linux version 5.6.0">
+  <title></title>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row" style="height:900px;width:1300px;">
+      <div class="col-md-6" style="height:900px;width:650px;">
+        <!--Body content-->
+        <pre ng-style="style2" style=
+        "background-color:#1c87c9;">{{"username: " + uporabnik.uporabnik + publicReadOnly}}</pre>
+        <pre ng-style="style2" style=
+        "background-color:#1c87c9;">{{ "LETO1:" + $ctrl.l1 + "  MESEC1:" + $ctrl.m1 + "     -    " + "  LETO2:" +$ctrl.l2+ "  MESEC2:" + $ctrl.m2}}</pre>
+        <div ng-style="style3" style=
+        "height:775px;background-color:#1c00c9;">
+          <p>id:<input type="text" style="width:80px" name="userId"
+          ng-disabled="true" ng-model="PA0[0].ID"> 
+          <!--                    sifra:<input type="text" style="width:80px" name="userSifra" ng-model="PA0[0].SIFRA">   -->
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(00-neaktivni)
+          d:<input type="text" style="width:40px" ng-model=
+          "PA0[0].DATD">m:<input type="text" style="width:40px"
+          ng-disabled="false" ng-model="PA0[0].DATM">l:<input type=
+          "text" style="width:40px" ng-disabled="false" ng-model=
+          "PA0[0].DOKUL">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button ng-click="sendData(uporabnik)"
+          ng-show="disabledDokuZapShow" ng-disabled=
+          "disabledDokuZap" ng-init="count=0">ZAPIŠI</button></p>
+          <p>Naziv:<input type="text" style="width:500px;" name=
+          "userNaziv" ng-model="PA0[0].NAZIV"></p>
+          <p>Davcna st.:<input type="text" name="user.ddavcna"
+          ng-model="PA0[0].DDAVCNA"> Dnival:<input type="text"
+          name="dnival" ng-model="PA0[0].DNIVAL"></p>
+          <p>Kont. os.:<input type="text" name="kotn_os" ng-model=
+          "PA0[0].KONT_OS"> Telefon1:<input type="text" name=
+          "telefon1" ng-model="PA0[0].TELEFON1"></p>
+          <p>EMAIL:<input type="text" name="telefax" ng-model=
+          "PA0[0].EMAIL"> Telefon2:<input type="text" name=
+          "telefon2" ng-model="PA0[0].TELEFON2"></p>
+          <p>Naslov1:<input type="text" ng-model="PA0[0].NASLOV1">
+          Št1.:<input type="text" style="width:60px" ng-model=
+          "PA0[0].NASLOV1ST"></p>
+          <p>Kraj1:<input type="text" ng-model="PA0[0].KRAJ1">
+          P.Št1.:<input type="text" style="width:80px" ng-model=
+          "PA0[0].KRAJ1ST"> Država1:<input type="text" ng-model=
+          "PA0[0].DRZAVA1"></p>Matična številka:<input type="text"
+          ng-model="PA0[0].MAT">
+          <p>Opomba1:<input type="text" style="width:500px;" name=
+          "Opomba1" ng-model="PA0[0].OPOMBA1"></p>
+          <p>Opomba2:<input type="text" style="width:500px;" name=
+          "Opomba2" ng-model="PA0[0].OPOMBA2"></p>
+          <p>Opomba3:<input type="text" style="width:500px;" name=
+          "Opomba3" ng-model="PA0[0].OPOMBA3"></p>
+          <p>Naslov2:<input type="text" ng-model="PA0[0].NASLOV2">
+          Št.2:<input type="text" style="width:60px" ng-model=
+          "PA0[0].NASLOV2ST"></p>
+          <p>Kraj2:<input type="text" ng-model="PA0[0].KRAJ2">
+          P.Št2.:<input type="text" style="width:80px" ng-model=
+          "PA0[0].KRAJ2ST"> Država2:<input type="text" ng-model=
+          "PA0[0].DRZAVA2"></p>
+          <p>Nov TRR:<input type="text" ng-model="PA0[0].NOVTRR">
+          R:<input type="number" min="0" max="1" style="width:70px"
+          ng-model="PA0[0].R"> G:<input type="number" min="0" max=
+          "1" style="width:70px" ng-model="PA0[0].G">
+          B:<input type="number" min="0" max="1" style="width:70px"
+          ng-model="PA0[0].B"></p>
+          <p>PP:<input type="text" ng-model="PA0[0].PP"> izpis
+          ID:<input type="text" ng-model="PA0[0].IID"></p>
+          <p>Rabat:<input type="text" name="rabat" ng-model=
+          "PA0[0].RABAT"> Racun:<input type="text" name="racun"
+          ng-model="PA0[0].ZIRO"></p>
+          <p>Veza1:<input type="text" name="veza1" ng-model=
+          "PA0[0].VEZA1"> Veza2:<input type="text" name="veza2"
+          ng-model="PA0[0].VEZA2"></p>
+          <p>Zas:<input type="text" name="zas" ng-model=
+          "PA0[0].ZAS"></p>
+          <p><button ng-click="sendDataDel(uporabnik)" ng-show=
+          "disabledDokuDelShow" ng-disabled="disabledDokuDel"
+          ng-init="count=0">{{"zbrisi partnerja"}}</button></p>
+          <table border="1">
+            <!--                    DDVVst:<input type="text" name="ddvvst" ng-model="PA0[0].DDVVST">       -->
+          </table>
+        </div>
+      </div>
+      <div class="col-md-6">
+        Naziv:<input type="text" style="width:370px;" ng-model=
+        "BS.NAZIV"> <input type="button" ng-style="style4" class=
+        "btn btn-primary btn-xs" value="išči" ng-click=
+        "b_search()"> {{searchPartnerji[0].sst}}<br>
+        <br>
+        <p ng-style="style1" style="background-color:#1c87c9;">
+        Search: <input ng-model="$ctrl.query" style="width:150px;">
+        Sort by: 
+         <select ng-init="$ctrl.orderProp='title'" ng-model=
+        "$ctrl.orderProp" style="width:150px">
+          <option value="title">
+            naziv
+          </option>
+          <option value="NASLOV">
+            naslov
+          </option>
+          <option value="KRAJ1">
+            KRAJ
+          </option>
+          <option value="MST">
+            MST
+          </option>
+          <option value="DST">
+            DST
+          </option>
+          <option value="-title">
+            -naziv
+          </option>
+          <option value="-NASLOV">
+            -naslov
+          </option>
+          <option value="-KRAJ1">
+            -KRAJ
+          </option>
+          <option value="-MST">
+            -MST
+          </option>
+          <option value="-DST">
+            -DST
+          </option>
+        </select></p>
+        <table border="1">
+          <tbody ng-repeat=
+          "partner in searchPartnerji | filter:$ctrl.query | orderBy:$ctrl.orderProp">
+            <tr ng-style="style3" style="background-color:#50c0f4;"
+            height="40px">
+              <td><input type="button" class=
+              "btn btn-primary btn-xs" value="&lt;-" ng-style=
+              "style4" ng-click="GetDetailsPA(partner)"></td>
+              <td align="right" style="width:100px;">
+              {{partner.title}}</td>
+              <td align="right" style="width:100px;">
+              {{partner.NASLOV}}</td>
+              <td align="right" style="width:100px;">
+              {{partner.KRAJ1}}</td>
+              <td align="right" style="width:100px;">
+              {{partner.MST}}</td>
+              <td align="right" style="width:100px;">
+              {{partner.DST}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

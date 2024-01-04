@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for HTML5 for Linux version 5.6.0">
+  <title></title>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2" ng-style="style1" style=
+      "height:800px;width:180px;background-color:#1c87c9;">
+        <!--Sidebar content-->
+      </div>
+      <div class="col-md-10" style="height:800px;width:880px;">
+        <!--Body content-->
+        <!--    <input type="text" ng-model="leto1"/>   -->
+        <pre ng-style="style2" style=
+        "background-color:#1c87c9;">{{ "LETO1:" + $ctrl.l1 + "  MESEC1:" + $ctrl.m1 + "     -    " + "  LETO2:" +$ctrl.l2+ "  MESEC2:" + $ctrl.m2}}</pre>
+        <div class="row" style="justify-content:center;">
+          <div ng-style="style3" class="col-md-8" style=
+          "height:765px;width:610px;background-color:#1c00c9;">
+            <p>id:<input type="text" name="userId" ng-disabled=
+            "true" ng-model="PA0[0].ID"> sifra:<input type="text"
+            name="userSifra" ng-model="PA0[0].SIFRA">
+            <button ng-click="sendData(user)" ng-init=
+            "count=0">ZAPIŠI</button></p>
+            <p>Naziv:<input type="text" style="width:500px;" name=
+            "userNaziv" ng-model="PA0[0].NAZIV"></p>
+            <p>Davcna st.:<input type="text" name="user.ddavcna"
+            ng-model="PA0[0].DDAVCNA"> DDVVst:<input type="text"
+            name="ddvvst" ng-model="PA0[0].DDVVST"></p>
+            <p>Kont. os.:<input type="text" name="kotn_os"
+            ng-model="PA0[0].KONT_OS"> EMAIL:<input type="text"
+            name="telefax" ng-model="PA0[0].TELEFAX"></p>
+            <p>Naslov1:<input type="text" ng-model=
+            "PA0[0].NASLOV1"> Št1.:<input type="text" style=
+            "width:60px" ng-model="PA0[0].NASLOV1ST"></p>
+            <p>Kraj1:<input type="text" ng-model="PA0[0].KRAJ1">
+            P.Št1.:<input type="text" style="width:80px" ng-model=
+            "PA0[0].KRAJ1ST"> Država1:<input type="text" ng-model=
+            "PA0[0].DRZAVA1"></p>
+            <p>Naslov2:<input type="text" ng-model=
+            "PA0[0].NASLOV2"> Št.2:<input type="text" style=
+            "width:60px" ng-model="PA0[0].NASLOV2ST"></p>
+            <p>Kraj2:<input type="text" ng-model="PA0[0].KRAJ2">
+            P.Št2.:<input type="text" style="width:80px" ng-model=
+            "PA0[0].KRAJ2ST"> Država2:<input type="text" ng-model=
+            "PA0[0].DRZAVA2"></p>
+            <p>Telefon1:<input type="text" name="telefon1"
+            ng-model="PA0[0].TELEFON1"> Telefon2:<input type="text"
+            name="telefon2" ng-model="PA0[0].TELEFON2"></p>
+            <p>Nov TRR:<input type="text" ng-model="PA0[0].NOVTRR">
+            R:<input type="number" min="0" max="1" style=
+            "width:70px" ng-model="PA0[0].R"> G:<input type=
+            "number" min="0" max="1" style="width:70px" ng-model=
+            "PA0[0].G"> B:<input type="number" min="0" max="1"
+            style="width:70px" ng-model="PA0[0].B"></p>
+            <p>PP:<input type="text" ng-model="PA0[0].PP"> izpis
+            ID:<input type="text" ng-model="PA0[0].IID"></p>
+            <p>Opomba1:<input type="text" style="width:500px;"
+            name="Opomba1" ng-model="PA0[0].OPOMBA1"></p>
+            <p>Opomba2:<input type="text" style="width:500px;"
+            name="Opomba2" ng-model="PA0[0].OPOMBA2"></p>
+            <p>Opomba3:<input type="text" style="width:500px;"
+            name="Opomba3" ng-model="PA0[0].OPOMBA3"></p>
+            <p>Rabat:<input type="text" name="rabat" ng-model=
+            "PA0[0].RABAT"> Racun:<input type="text" name="racun"
+            ng-model="PA0[0].ZIRO"></p>
+            <p>Veza1:<input type="text" name="veza1" ng-model=
+            "PA0[0].VEZA1"> Veza2:<input type="text" name="veza2"
+            ng-model="PA0[0].VEZA2"></p>
+            <p>Zas:<input type="text" name="zas" ng-model=
+            "PA0[0].ZAS"> Dnival:<input type="text" name="dnival"
+            ng-model="PA0[0].DNIVAL"></p>
+            <table border="1"></table>
+          </div>
+          <div class="col-md-0" style=
+          "width:20px;background-color:#2441cc;"></div>
+          <div class="column" style="width:30px;"></div>
+          <div class="col-md-3" style=
+          "width:260px;background-color:#1c11cc;">
+            <br>
+            <textarea name="mytext" ng-model=
+            "descText"></textarea><br>
+            <input type="button" ng-click="setTextareaValue(user)"
+            value="Set Text"><br>
+            <input type="button" ng-click="postTextareaValue()"
+            value="post Text"><br>
+            <p><span>count: {{$ctrl.count2}}</span></p>
+            <p><span><a href="javascript:void(0)" ng-click=
+            "$ctrl.clickEvent()">Click Here</a></span></p>
+            <p><span>count: {{$ctrl.msg}}</span></p>
+            <p><span><button>Click 1</button></span></p>
+            <p><span><button class="btn btn-success">Click
+            2</button></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for HTML5 for Linux version 5.6.0">
+  <title></title>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-10" style="height:800px;width:880px;">
+        <!--Body content-->
+        <!--    <input type="text" ng-model="leto1"/>   -->
+        <pre ng-style="style2" style=
+        "background-color:#1c87c9;">{{"username: " + uporabnik.uporabnik + publicReadOnly}}</pre>
+        <pre ng-style="style2" style=
+        "background-color:#1c87c9;">{{" (" + PA0[0].TEKST1.length + " znakov) " + "ID:" + PA0[0].ID}}</pre>
+        <div ng-style="style3" style=
+        "height:765px;background-color:#1c00c9;">
+          <p>Oznaka:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"
+          maxlength="5" style="width:100px;" ng-model=
+          "PA0[0].OZNAKA">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button ng-click="sendData(uporabnik)" ng-show=
+          "disabledDokuZapShow" ng-disabled="disabledDokuZap"
+          ng-init="count=0">{{zapisi}}</button></p>
+          <textarea ng-model="PA0[0].TEKST1" maxlength="720" style=
+          "width:800px;height:300px;"></textarea>
+          <p><button ng-click="txtDataDel(uporabnik)" ng-show=
+          "true" ng-disabled="true" ng-init="count=0">{{"zbriši
+          tekst ?"}}</button></p>
+          <p><button ng-click="sendDataDel(uporabnik)" ng-show=
+          "disabledDokuDelShow" ng-disabled="disabledDokuDel"
+          ng-init="count=0">{{"zbriši sporočilo ?"}}</button></p>
+          <table border="1">
+            <datepicker><input ng-model="PA0[0].DAT.d" type="text" ng-disabled="true"/></datepicker>           
+
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

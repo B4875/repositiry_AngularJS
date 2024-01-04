@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en" ng-app="tiskApp">
+  <head>
+    <meta charset="utf-8">
+
+<meta http-equiv="Content-Security-Policy" content="default-src https://127.0.0.1:8080/favicon.ico https://127.0.0.1:8070/favicon.ico https://127.0.0.1:443/ https://server4875:443/ https://server4875.si/ https://server4875.si:443 https://pdf-lib.js.org/ data: 'self' https://127.0.0.1:8080 https://127.0.0.1:8070 http://127.0.0.1:3333/space http://localhost:3333 http://localhost:3030 http://127.0.0.1:8080 https://meteo.arso.gov.si/; style-src 'self'  https://127.0.0.1:443/ https://unpkg.com; script-src 'self' https://127.0.0.1:443/ https://meteo.ars2o.gov.si https://cdnjs.cloudflare.com https://unpkg.com https://meteo.arso.gov.si/; img-src 'self' https://127.0.0.1:443/ data:">
+
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+<link rel="icon" href="data:,">
+
+  <link href="angular-datepicker-master/src/css/angular-datepicker.css" rel="stylesheet" type="text/css" />
+
+    <title></title>
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="app.animations.css" />
+
+<!--    <script src="ng2/tslib.js"></script>	-->
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-animate/angular-animate.js"></script>
+    <script src="lib/angular-resource/angular-resource.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="app.module.js"></script>
+    <script src="app.config.js"></script>
+    <script src="app.animations.js"></script>
+    <script src="core/core.module.js"></script>
+    <script src="core/checkmark/checkmark.filter.js"></script>
+    <script src="core/racun/racun.module.js"></script>
+    <script src="core/racun/racun.service.js"></script>
+    <script src="core/racuni/racuni.module.js"></script>
+    <script src="core/racuni/racuni.service.js"></script>
+    <script src="core/racuni2/racuni2.module.js"></script>
+    <script src="core/racuni2/racuni2.service.js"></script>
+    <script src="core/racuni12/racuni12.module.js"></script>
+    <script src="core/racuni12/racuni12.service.js"></script>
+    <script src="core/racuni100/racuni100.module.js"></script>
+    <script src="core/racuni100/racuni100.service.js"></script>
+    <script src="core/racunipartnerji/racunipartnerji.module.js"></script>
+    <script src="core/racunipartnerji/racunipartnerji.service.js"></script>
+    <script src="core/racunipartnerjim/racunipartnerjim.module.js"></script>
+    <script src="core/racunipartnerjim/racunipartnerjim.service.js"></script>
+    <script src="core/racunipartnerjil/racunipartnerjil.module.js"></script>
+    <script src="core/racunipartnerjil/racunipartnerjil.service.js"></script>
+    <script src="core/doku/doku.module.js"></script>
+    <script src="core/doku/doku.service.js"></script>
+    <script src="core/crdata/crdata.module.js"></script>
+    <script src="core/crdata/crdata.service.js"></script>
+
+    <script src="core/partner/partner.module.js"></script>
+    <script src="core/partner/partner.service.js"></script>
+    <script src="core/partnerji/partnerji.module.js"></script>
+    <script src="core/partnerji/partnerji.service.js"></script>
+    <script src="core/bsearch/bsearch.module.js"></script>
+    <script src="core/bsearch/bsearch.service.js"></script>
+    <script src="core/ajpes/ajpes.module.js"></script>
+    <script src="core/ajpes/ajpes.service.js"></script>
+
+    <script src="core/klavzula/klavzula.module.js"></script>
+    <script src="core/klavzula/klavzula.service.js"></script>
+    <script src="core/klavzule/klavzule.module.js"></script>
+    <script src="core/klavzule/klavzule.service.js"></script>
+    <script src="core/udata/udata.module.js"></script>
+    <script src="core/udata/udata.service.js"></script>
+    <script src="core/mdata/mdata.module.js"></script>
+    <script src="core/mdata/mdata.service.js"></script>
+    <script src="core/tekst/tekst.module.js"></script>
+    <script src="core/tekst/tekst.service.js"></script>
+
+
+  <script src="angular-cookies/angular-cookies.js"></script>
+  <script src="angular-datepicker-master/src/js/angular-datepicker.js"></script>
+  <script src="angularjs-currency-input-mask-master/src/angularjs-currency-input-mask.js"></script>
+  <script src="pdfmake/build/pdfmake.min.js"></script>
+  <script src="pdfmake/build/vfs_fonts.js"></script>
+  <script src="pdf-lib/dist/pdf-lib.js"></script>
+  <script src="standard-fonts/dist/standard-fonts.js"></script>
+  <script src="fontkit/dist/fontkit.umd.js"></script>
+  <script src="crypto-js/crypto-js.js"></script>
+  
+    <link href="cookieconsent/build/cookieconsent.min.css" rel="stylesheet"> 
+
+  <script src="cookieconsent/build/cookieconsent.min.js"></script>	
+
+  <script src="moment/moment.js"></script>	
+  <script src="angular-moment/angular-moment.min.js"></script>
+
+    <script src="racuni-list/racuni-list.module.js"></script>
+    <script src="racuni-list/racuni-list.component.js"></script>
+
+    <script src="racuni-list2/racuni-list.module.js"></script>
+    <script src="racuni-list2/racuni-list.component.js"></script>
+
+    <script src="racuni12-list/racuni12-list.module.js"></script>
+    <script src="racuni12-list/racuni12-list.component.js"></script>
+
+    <script src="racuni12-graph/racuni12-graph.module.js"></script>
+    <script src="racuni12-graph/racuni12-graph.component.js"></script>
+
+    <script src="racun-detail/racun-detail.module.js"></script>
+    <script src="racun-detail/racun-detail.component.js"></script>
+
+    <script src="racun-detail2/racun-detail2.module.js"></script>
+    <script src="racun-detail2/racun-detail2.component.js"></script>
+
+    <script src="racun-detail3/racun-detail3.module.js"></script>
+    <script src="racun-detail3/racun-detail3.component.js"></script>
+
+    <script src="partner-list/partner-list.module.js"></script>
+    <script src="partner-list/partner-list.component.js"></script>
+ 
+    <script src="partner-list-ajpes/partner-list.module.js"></script>
+    <script src="partner-list-ajpes/partner-list.component.js"></script>
+
+    <script src="klavzule-list/klavzule-list.module.js"></script>
+    <script src="klavzule-list/klavzule-list.component.js"></script>
+
+    <script src="partner-detail/partner-detail.module.js"></script>
+    <script src="partner-detail/partner-detail.component.js"></script>
+
+    <script src="klavzule-detail/klavzule-detail.module.js"></script>
+    <script src="klavzule-detail/klavzule-detail.component.js"></script>
+
+    <script src="partner-detail0/partner-detail0.module.js"></script>
+    <script src="partner-detail0/partner-detail0.component.js"></script>
+
+    <script src="mdata-detail/mdata-detail.module.js"></script>
+    <script src="mdata-detail/mdata-detail.component.js"></script>
+
+    <script src="tekst-list/tekst-list.module.js"></script>
+    <script src="tekst-list/tekst-list.component.js"></script>
+  
+    <script src="tekst-detail/tekst-detail.module.js"></script>
+    <script src="tekst-detail/tekst-detail.component.js"></script>
+
+
+	  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js"></script>
+	  <link rel="stylesheet"; href="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.css">
+<script src="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.js"></script>
+  </head>
+  <body>
+
+    <div class="view-container">
+      <div ng-view class="view-frame"></div>
+    </div>
+
+  </body>
+</html>

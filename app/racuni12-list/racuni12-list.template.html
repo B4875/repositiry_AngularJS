@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2" ng-style="style1" style="height:1000px;width:170px;background-color:#1c87c9;">
+      <!--Sidebar content-->
+            <table>
+      <td style="line-height:20px;" colspan="4">&nbsp;</td>
+      <tr><td style="width:80px";>Username:</td></tr><tr><td><input type="text" name="datumMesec1"  ng-disabled="true" style="width:140px;" ng-model="uporabnik.uporabnik"></td></tr>
+      <td style="line-height:50px;" colspan="4">&nbsp;</td>
+      </table>
+
+      <p>
+        Search:
+        <input ng-model="$ctrl.query" style="width:150px"/>
+      </p>
+      <p>
+        Sort by:
+        <!-- <select ng-model="$ctrl.orderProp " style="width:150px"><option value="DOKU">doku</option><option value="IME">ime</option><option value="PLACILO">placilo</option></select>  -->
+		  <select ng-init="$ctrl.orderProp='SX.MN'" ng-model="$ctrl.orderProp" style="width:150px"><option value="SX.MN" selected>+doku</option><option value="SX.M">+ime</option><option value="SX.S3[0]">+znesek</option><option value="SX.S3[1]">+neplac</option><option value="SX.S3[2]">+plac</option><option value="SX.S3[3]">+st.r.</option><option value="SX.S3[4]">+l.min</option><option value="SX.S3[5]">+l.max</option><option value="SX.S3[5]-SX.S3[4]">+let</option><option value="-SX.MN">-doku</option><option value="-SX.M">-ime</option><option value="-SX.S3[0]">-znesek</option><option value="-SX.S3[1]">-neplac</option><option value="-SX.S3[2]">-plac</option><option value="-SX.S3[3]">-st.r.</option><option value="-SX.S3[4]">-l.min</option><option value="-SX.S3[5]">-l.max</option><option value="-(SX.S3[5]-SX.S3[4])">-let</option></select> 
+      </p>
+<table>
+<!--<td bgcolor="#FFFFFF" style="line-height:10px;" colspan=3>&nbsp;</td>-->
+<td style="line-height:50px;" colspan=2>&nbsp;</td>
+<!--
+<tr><td>Mesec1:</td><td><input type="text" name="datumMesec1" style="width:50px;" ng-model="$ctrl.datum.mesec1"></td></tr>
+<tr><td>Leto1:</td><td><input type="text" name="datumLeto1" style="width:50px;" ng-model="$ctrl.datum.leto1"></td></tr>
+<tr><td>Mesec2:</td><td><input type="text" name="datumMesec2" style="width:50px;" ng-model="$ctrl.datum.mesec2"></td></tr>
+<tr><td>Leto2:</td><td><input type="text" name="datumLeto2" style="width:50px;" ng-model="$ctrl.datum.leto2"></td></tr>
+<td style="line-height:15px;" colspan=2>&nbsp;</td>
+<tr><td colspan="2">
+<button ng-click="reload_page1($ctrl.datum)" class="btn btn-primary btn-xs">-></button>
+<button ng-click="reload_page2($ctrl.datum)" class="btn btn-primary btn-xs">P</button>
+<button ng-click="reload_page3($ctrl.datum)" class="btn btn-primary btn-xs">W</button></td>
+</tr>
+-->
+<!--   <tr><td><a ng-href="{{myVar}}">"Dodaj račun"</a></td></tr>  -->
+<td style="line-height:50px;" colspan=2>&nbsp;</td>
+<!--
+	<tr><td><button ng-click="nov_racun()" class="btn btn-primary btn-xs">Nov Račun</button></td></td></tr>
+	<tr><td><button ng-click="partnerji($ctrl.datum)" class="btn btn-primary btn-xs">Partnerji</button></td></td></tr>
+	<tr><td><button ng-click="samo_racuni($ctrl.datum)" class="btn btn-primary btn-xs">Računi (seznam)</button></td></td></tr>
+-->
+</table> 
+
+<!--	<div ng-app ng-controller="Racuni">-->
+<!--	    <input type="text" placeholder="0" ng-model="deposit" />&#8364;</br> -->
+<!--	</div>	-->
+
+
+    </div>
+    <div class="col-md-10">
+
+      <!--Body content-->
+		<!--	<input type="text" ng-model="leto1"/>	-->
+		<pre ng-style="style2" style="background-color:#1c87c9;">{{" (" + $ctrl.racuni12.length + ") " + "LETO1:" + $ctrl.l1 + "  MESEC1:" + $ctrl.m1 + "     -    " + "  LETO2:" +$ctrl.l2+ "  MESEC2:" + $ctrl.m2}}</pre>
+ 
+  
+		<table id="tblCustomers" border="1">
+			<thead><tr><th style="text-align:center">id</th><th style="text-align:center">mesec</th><th style="text-align:center">znesek</th><th style="text-align:center">neplačano</th><th style="text-align:center">plačano</th><th style="text-align:center"</th<th style="text-align:center"></th><th style="text-align:centre">št.vsi</th><th style="text-align:center">št.vsote</th><th style="text-align:center">št.part.</th></tr></thead>
+        <tbody ng-repeat="racun12 in racuni12.S0.S12 | filter:$ctrl.query | orderBy:$ctrl.orderProp track by $index">
+          <tr ng-style="style3" style="background-color:#50c0f4;" height="40px">
+            <td  align="center" style="width:100px;">{{racun12.SX.MN}}</td>
+            <td  align="left" style="width:100px;">{{racun12.SX.M}}</td>
+            <td  align="right" style="width:100px;">{{racun12.SX.N1 + "," + racun12.SX.N2 + "." + racun12.SX.N3}}</td>
+            <td  align="right" style="width:100px;">{{racun12.SX.S3[1]}}</td>
+            <td  align="right" style="width:100px;">{{racun12.SX.S3[2]}}</td>
+<!--            <td align="center" style="width:90px;">{{racun.DATP.substr(0,10)}}</td>-->
+            <!--  <td>{{racun.IME + " (".padStart(50-racun.IME.length,".....") + racun.PART + ")"}}</td> -->
+<!--			  <td style="font-weight:bold">{{racun.IME + "..........(" + racun.PART + ")"}}</td>-->
+<!--		  <td align="right" style="width:100px;">{{"T" + racun.DGMPV+ " €"}}</td>  -->
+	  <td align="right" style="width:100px;">{{" €"}}</td>
+            <td  align="right" style="width:100px;">{{racun12.SX.S3[3]}}</td>
+            <td  align="right" style="width:100px;">{{racun12.SX.S3[4]}}</td>
+            <td  align="right" style="width:100px;">{{racun12.SX.S3[5]}}</td>
+            <td  align="right" style="width:100px;">{{racun12.SX.S3[5]-racun12.SX.S3[4]}}</td>
+<!--		<td><input type="button" class="btn btn-primary btn-xs" value="->" ng-click="GetDetails(racun.DOKU)" /></td>-->
+			  
+            <!--
+          </tr>
+          <tr ng-repeat="pr1 in racun.PR1">
+			  <td></td>
+			  <td>{{pr1.PD}}</td>
+            <td>{{pr1.TEKST}}</td>
+            <td align="right">{{pr1.KOLICINA  + " " +  pr1.EM}}</td>
+            
+            <td align="right">{{pr1.NCENA + " €"}}</td>
+			  <td align="right">{{pr1.ZNESEKDDV + " €"}}</td>
+		    </tr>
+	    -->
+        </tbody>
+        <!--
+        <li ng-repeat="racun in $ctrl.racun | filter:$ctrl.query | orderBy:$ctrl.orderProp"
+-->
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2" style="height:800px;width:180px;background-color:#1c87c9;">
+      <!--Sidebar content-->
+      <p>
+        Search:
+        <input ng-model="$ctrl.query" style="width:150px"/>
+      </p>
+      <p>
+        Sort by:
+		  <select ng-model="$ctrl.orderProp " style="width:150px"><option value="DOKU">doku</option><option value="IME">ime</option></select> 
+      </p>
+ 
+    </div>
+    <div class="col-md-10">
+      <!--Body content-->
+		<pre style="background-color:#1c87c9;">{{ "LETO1:" + $ctrl.l1 + "  MESEC1:" + $ctrl.m1 + "     -    " + "  LETO2:" +$ctrl.l2+ "  MESEC2:" + $ctrl.m2}}</pre>
+ 
+      <table border="1">
+
+
+	</br><p>http:<input type="text" name="httpa" ng-model="httpp.httpa" style="width:790px;"></p>
+<br><textarea  name="mytext" rows="10" style="minHeight=400px;width:820px;" ng-model="descText"></textarea></br></br>
+		<input type="button" ng-click="setTextareaValue(doku)" value="Set Text" >
+		<input type="button" ng-click="postTextareaValue()" value="post Text" ></br>    
+
+
+	</br><p>id:<input type="text" name="userId" ng-model="user.id">
+	doku:<input type="text" name="dokuDoku" ng-model="doku.doku" ng-value="doku.doku"></p>
+	<p>Naziv:<input type="text" style="width:500px;" name="dokuNaziv" ng-model="doku.naziv"></p>
+	<p>Partn:<input type="text" name="doku.partn" ng-model="doku.partn">
+	Placilo:<input type="text" name="doku.placilo" ng-model="doku.placilo"></p>
+
+
+<button ng-click="count3 = count3 + 1" ng-init="count=0">
+  Increment
+</button>
+
+<button ng-click="$ctrl.clickEventTp7()" ng-init="count=0">
+  get tp7...
+</button>
+
+<button ng-click="$ctrl.clickEventARSO()" ng-init="count=0">
+  get arso
+</button>
+
+<button ng-click="sendData()" ng-init="count=0">
+  Increment..
+</button>
+
+<p>  count: {{count3}}</p>
+<pre>{{response1}}</pre>
+
+
+      </table>
+    </div>
+  </div>
+</div>

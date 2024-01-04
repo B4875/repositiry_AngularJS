@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<div class="container-fluid">
+  <div class="row">
+
+	<pre ng-style="style2" style="background-color:#1c87c9;width:1250px;">{{"username: " + uporabnik.uporabnik + publicReadOnly}}</pre>		
+    <div class="col-md-6" ng-style="style1" style="height:850px;width:540px;background-color:#1c87c9;">
+      <!--Sidebar content-->
+
+<tr>
+<td>	id:<input type="text" style="width:100px" ng-disabled="true" name="userId" ng-model="doku.id"></td>
+<td>&nbsp;&nbsp;	doku:<input type="text" ng-disabled="disabledDoku" name="dokuDoku" style="width:100px" ng-model="PR0[0].DOKU0.DOKU"></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td><button ng-click="postData3(doku, uporabnik)" ng-disabled="disabledDokuZap" ng-show="disabledDokuZapShow" ng-disabled="disabledDokuZap" ng-init="count=0">{{zapisi}}</button></td>
+</tr>
+<table>
+<tr><td><datepicker><input ng-model="PR0[0].DATN" type="text" ng-disabled="true"/></datepicker></td>
+<td><datepicker><input ng-model="PR0[0].DATP" type="text" ng-disabled="true"/></datepicker></td>
+<td><datepicker><input ng-model="PR0[0].DATK" ng-disabled="disabledDoku2" type="text"/></datepicker></td>
+</tr>
+</table>
+
+	<p>Naziv:<input type="text" style="width:500px;" ng-disabled="true" name="dokuNaziv" ng-model="PR0[0].IME"></p>
+	<p><input type="text" style="width:50px;" ng-disabled="true" name="doku.partn" ng-model="PR0[0].PARTN">
+	<input type="text" style="width:130px;" ng-disabled="true" name="doku.partn" ng-model="PR0[0].PA[0].NASLOV1">
+	<input type="text" style="width:50px;" ng-disabled="true" name="doku.partn" ng-model="PR0[0].PA[0].NASLOV1ST">
+	<input type="text" style="width:130px;" ng-disabled="true" name="doku.partn" ng-model="PR0[0].PA[0].KRAJ1">
+	<input type="text" style="width:50px;" ng-disabled="true" name="doku.partn" ng-model="PR0[0].PA[0].KRAJ1ST">
+	<input type="text" style="width:80px;" ng-disabled="true" name="doku.partn" ng-model="PR0[0].PA[0].DRZAVA1"></p>
+<!--	Placilo:<input type="text" name="doku.placilo" ng-model="doku.placilo">	-->
+<!--	Placilo:<input type="number" ng-disabled="true" min="0.0000" max="100000.0000" step="0.0001" style="width:200px;" name="dokuZnesek" ng-model="doku.placilo" ng-value="doku.placilo"></p>	-->
+<p>	Št.N.:<input type="text" ng-disabled="disabledDoku2" style="width:70px;" ng-model="PR0[0].NARO">
+PLAČILO:<input type="text" ng-disabled="true" style="width:200px" ng-model="(PR0[0].DGMPV)" mask-currency="'€'" config="{group:'.',decimal:',',indentation:' ', decimalSize:2}" />
+{{PR0[0].DGMPV}}</p>
+
+ 
+    <table border="1">
+	<thead>
+          <tr ng-style="style3" style="background-color:#50c0f4;" height="40px">	
+		<th align="left" ng-disabled="disabledDoku2" style="width:300px;font-size:14px;">TEKST</th>
+		<th align="left" ng-disabled="disabledDoku2" style="width:40px;font-size:14px;">CENA</th>
+		<th align="left" ng-disabled="disabledDoku2" style="width:25px;font-size:12px;">KOLIČINA</th>
+		<th align="left" ng-disabled="disabledDoku2" style="width:25px;font-size:12px;">DDV</th>
+		<th align="left" ng-disabled="disabledDoku2" style="width:40px;font-size:12px;"><div>CENA</div><div>(DDV)</div></th>
+		<th align="left" ng-disabled="disabledDoku2" style="width:70px;font-size:14px;">ZNESEK</th>
+		<th align="left" ng-disabled="disabledDoku2" style="width:10px;font-size:12px;"></th>
+		<th align="left" ng-disabled="disabledDoku2" style="width:10px;font-size:14px;">
+			<input type="button" class="btn btn-primary btn-xs" ng-disabled="disabledDoku2" ng-style="style4" value="+" ng-click="addData(pos)" />
+		</th>
+	  </tr>
+	</thead>
+        <tbody ng-repeat="pr in PR0[0].PR1 | filter:$ctrl.query | orderBy:$ctrl.orderProp track by $index">
+          <tr ng-style="style3" style="background-color:#50c0f4;" height="40px">
+            <td  align="left">{{pr.TEKST}}</td>
+            <td  align="right">{{pr.NCENA}}</td>
+            <td  align="right">{{pr.KOLICINA}}</td>
+            <td  align="right">{{pr.PD}}</td>
+            <td  align="right">{{pr.MPC}}</td>
+            <td  align="right">{{pr.ZNESEK}}</td>
+	    <td><input type="button" class="btn btn-primary btn-xs" ng-disabled="disabledDoku2" ng-style="style4" value="E" ng-click="GetDetailsPR($index)" /></td>
+	   <td><input type="button" class="btn btn-primary btn-xs" ng-disabled="disabledDoku2" ng-style="style4" value="X" ng-click="DeleteDetails($index)" /></td></tr>
+	</tbody>
+     </table>
+
+	</br><p>tekst:<input type="text" name="dokuText" ng-disabled="disabledDoku2" style="width:400px;" ng-model="PR0[0].PR1[PR1Index].TEKST">
+EM:<input type="text" ng-disabled="true" ng-disabled="disabledDoku2" style="width:50px;" name="dokuEM" ng-model="PR0[0].PR1[PR1Index].EM" ng-value="PR0[0].PR1[PR1Index].EM"></p>
+	<p>cena:<input type="number" min="0.0000" max="100000.0000" step="0.0001" ng-disabled="disabledDoku2" style="width:120px;" name="dokuNcena" ng-model="PR0[0].PR1[PR1Index].NCENA" ng-change="updatePrice()">
+<!--	ng-value="PR0[0].PR1[PR1Index].MPC/(1+PR0[0].PR1[PR1Index].PD/100)" ng-change="updatePrice()">	-->
+<!--<p>cena:<input type="text" style="width:150px" name="dokuNcena" ng-model="PR0[0].PR1[PR1Index].NCENA" mask-currency="'€ '" config="{group:'.',decimal:',',indentation:' ', decimalSize:4}" ng-change="updatePrice()"/> </p>-->
+
+<label style="font-size:12px;">količina:</label><input type="number" ng-disabled="disabledDoku2" style="width:90px;" name="dokuKolicina" ng-model="PR0[0].PR1[PR1Index].KOLICINA" ng-change="updatePrice()">
+DDV:<select type="text" ng-disabled="disabledDoku2" style="width:70px;" name="dokuDDV" ng-model="PR0[0].PR1[PR1Index].PD" ng-change="updatePrice()">
+	<option value="22">22</option>	<option value="9.5" >9.5</option> <option value="0" >0</option>
+</select>
+ <label ng-disabled="disabledDoku2" style="font-size:12px;">cena(DDV):</label><input type="number" min="0.0000" max="100000.0000" step="0.0001" ng-disabled="disabledDoku2" style="width:120px;" name="dokuMpc" ng-model="PR0[0].PR1[PR1Index].MPC"> </p> 
+<!--	ng-value="PR0[0].PR1[PR1Index].NCENA+((PR0[0].PR1[PR1Index].NCENA*10*PR0[0].PR1[PR1Index].PD)/1000)"></p> -->
+<!--<label style="font-size:12px;">cena(DDV):</label>
+<input type="text" style="width:150px" name="dokuNcena" ng-model="PR0[0].PR1[PR1Index].MPC" mask-currency="'€ '" config="{group:'.',decimal:',',indentation:' ', decimalSize:4}"/></p> -->
+
+<p>znesek:<input type="text" ng-disabled="true" style="width:150px" ng-model="(PR0[0].PR1[PR1Index].ZNESEK)" mask-currency="'€'" config="{group:'.',decimal:',',indentation:' ', decimalSize:4}" />
+<!--	<p>znesek:<input type="text" ng-disabled="true" name="dokuPlacilo" style="width:140px;" ng-model="PR0[0].PR1[PR1Index].ZNESEK">-->
+<!-- ng-value="PR0[0].PR1[PR1Index].NCENA*PR0[0].PR1[PR1Index].KOLICINA">	-->
+<!--znesek(DDV):<input type="text" ng-model="PR0[0].PR1[PR1Index].ZNESEKDDV" ng-disabled="true" name="dokuPlaciloDDV" style="width:140px;">-->
+znesek(DDV):<input type="text" ng-disabled="true" style="width:150px" ng-model="PR0[0].PR1[PR1Index].ZNESEKDDV" mask-currency="'€'" config="{group:'.',decimal:',',indentation:' ', decimalSize:4}" />
+
+			<button ng-click="addData(pos)" class="btn btn-primary btn-xs" ng-disabled="disabledDoku2" ng-style="style4" ng-init="count=0">nova pos.</button></p>
+
+
+
+
+     </div>
+    <div class="col-md-6">
+
+		<pre ng-style="style1" style="background-color:#1c87c9;">{{" (" + PR0[0].KL[0].SEZNAMKL.length + ") " + "LETO1:" + $ctrl.l1 + "  MESEC1:" + $ctrl.m1 + "     -    " + "  LETO2:" +$ctrl.l2+ "  MESEC2:" + $ctrl.m2}}</pre>
+ 
+      <table border="1">
+        <tbody ng-repeat="klavzulas in PR0[0].KL[0].SEZNAMKL | filter:$ctrl.query | orderBy:$ctrl.orderProp">
+          <tr ng-style="style3" style="background-color:#50c0f4;" height="40px">
+		<td><input type="button" class="btn btn-primary btn-xs" value="-" ng-disabled="disabledDoku2" ng-style="style4" ng-click="odstrani_klavzulo(klavzulas.K)" /></td>
+            <td  align="right" style="width:100px;">{{klavzulas.K}}</td>
+            <td  align="right" style="width:100px;">{{klavzulas.V.ID}}</td>
+            <td  align="right" style="width:100px;">{{klavzulas.V.OZNAKA}}</td>
+            <td  align="right" style="width:100px;">{{klavzulas.V.TEKST1}}</td>
+            <td  align="right" style="width:100px;">{{klavzulas.V.TEKST2}}</td>
+            <td  align="right" style="width:100px;">{{klavzulas.V.TEKST3}}</td>
+            <td  align="right" style="width:100px;">{{klavzulas.V.TEKST4}}</td>
+            <td  align="right" style="width:100px;">{{klavzulas.V.TEKST5}}</td>
+            <td  align="right" style="width:100px;">{{klavzulas.V.LETO}}</td>
+
+        </tbody>
+ 
+      </table>
+
+      <p ng-style="style1" style="background-color:#1c87c9;">
+        Search:
+        <input ng-model="$ctrl.query" style="width:150px;"/>
+        Sort by:
+        <!-- <select ng-model="$ctrl.orderProp " style="width:150px"><option value="DOKU">doku</option><option value="IME">ime</option><option value="PLACILO">placilo</option></select>  -->
+		  <select ng-init="$ctrl.orderProp='ID'" ng-model="$ctrl.orderProp " style="width:150px"><option value="ID">id</option><option value="NAZIV">naziv</option><option value="NASLOV1">naslov1</option><option value="KONT_OS">kont_os</option><option value="NASLOV1">naslov1</option></select> 
+      </p>
+
+      <!--Body content-->
+		<!--	<input type="text" ng-model="leto1"/>	-->
+		<pre ng-style="style1" style="background-color:#1c87c9;">{{" (" + klavzule0.length + ") " + "LETO1:" + $ctrl.l1 + "  MESEC1:" + $ctrl.m1 + "     -    " + "  LETO2:" +$ctrl.l2+ "  MESEC2:" + $ctrl.m2}}</pre>
+ 
+      <table border="1">
+        <tbody ng-repeat="klavzula in klavzule0 | filter:$ctrl.query | orderBy:$ctrl.orderProp">
+          <tr ng-style="style3" style="background-color:#50c0f4;" height="40px">
+		<td><input type="button" class="btn btn-primary btn-xs" value="+" ng-disabled="disabledDoku2" ng-style="style4" ng-click="dodaj_klavzulo(klavzula)" /></td>
+            <td  align="right" style="width:100px;">{{klavzula.ID}}</td>
+            <td  align="right" style="width:100px;">{{klavzula.OZNAKA}}</td>
+            <td  align="right" style="width:100px;">{{klavzula.TEKST1}}</td>
+            <td  align="right" style="width:100px;">{{klavzula.TEKST2}}</td>
+            <td  align="right" style="width:100px;">{{klavzula.TEKST3}}</td>
+            <td  align="right" style="width:100px;">{{klavzula.TEKST4}}</td>
+            <td  align="right" style="width:100px;">{{klavzula.TEKST5}}</td>
+            <td  align="right" style="width:100px;">{{klavzula.LETO}}</td>
+
+ 
+      </table>
+
+
+
+
+    </div>
+  </div>
+</div>

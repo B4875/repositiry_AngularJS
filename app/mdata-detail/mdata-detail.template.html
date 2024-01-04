@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for HTML5 for Linux version 5.6.0">
+  <title></title>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-10" style="height:800px;width:880px;">
+        <!--Body content-->
+        <!--    <input type="text" ng-model="leto1"/>   -->
+        <pre ng-style="style2" style=
+        "background-color:#1c87c9;">{{"username: " + uporabnik.uporabnik + publicReadOnly}}</pre>
+        <div ng-style="style3" style=
+        "height:765px;background-color:#1c00c9;">
+          <table border="1"></table>
+          <table>
+            <tr>
+              <td style="width:500px;">
+                <form>
+                  Predloga na izpisu:<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"
+                  ng-model="PA0[0].TEMPLATE" value=
+                  "Dopis_A04">&nbsp;&nbsp;prazno (za prednatisnjen
+                  papir)<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"
+                  ng-model="PA0[0].TEMPLATE" value=
+                  "Dopis_A4">&nbsp;&nbsp;testna predloga<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"
+                  ng-disabled="true" ng-model="PA0[0].TEMPLATE"
+                  value="">&nbsp;&nbsp;predloga uporabnika<br>
+                </form>
+              </td>
+              <td><button ng-click="sendData(uporabnik)" ng-show=
+              "disabledDokuZapShow" ng-disabled="disabledDokuZap"
+              ng-init="count=0">{{zapisi}}</button></td>
+            </tr>
+          </table><br>
+          <br>
+          <table>
+            <tr>
+              <td align="center" style="width:500px;">Tekst desno
+              zgoraj(naziv):</td>
+              <td><input type="text" maxlength="37" style=
+              "width:200px;" ng-model="PA0[0].TEKST1"></td>
+            </tr>
+            <tr>
+              <td align="center">Tekst desno zgoraj(ulica):</td>
+              <td><input type="text" maxlength="37" style=
+              "width:200px;" ng-model="PA0[0].TEKST2"></td>
+            </tr>
+            <tr>
+              <td align="center">Tekst desno zgoraj(kraj):</td>
+              <td><input type="text" maxlength="37" style=
+              "width:200px;" ng-model="PA0[0].TEKST3"></td>
+            </tr>
+            <tr>
+              <td align="center">Tekst desno zgoraj(država):</td>
+              <td><input type="text" maxlength="37" style=
+              "width:200px;" ng-model="PA0[0].TEKST4"></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="center">Tekst namenjen TRR (TRR:
+              SI...):</td>
+              <td><input type="text" maxlength="37" style=
+              "width:200px;" ng-model="PA0[0].TEKST5"></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td align="center">Tekst namenjen ID št. (naša ID št.
+              : SI...):</td>
+              <td><input type="text" maxlength="31" style=
+              "width:200px;" ng-model="PA0[0].TEKST12"></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <p>Tekst levo spodaj(drugi podatki...):</p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><input type="text" maxlength="97"
+              style="width:800px;" ng-model="PA0[0].TEKST6"></td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <p>Tekst levo spodaj:</p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><input type="text" maxlength="97"
+              style="width:800px;" ng-model="PA0[0].TEKST7"></td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <p>Tekst sredina spodaj:</p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><input type="text" maxlength="55"
+              style="width:800px;" ng-model="PA0[0].TEKST8"></td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <p>Tekst sredina spodaj:</p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><input type="text" maxlength="55"
+              style="width:800px;" ng-model="PA0[0].TEKST9"></td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <p>Tekst desno spodaj:</p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><input type="text" maxlength="24"
+              style="width:800px;" ng-model="PA0[0].TEKST10"></td>
+            </tr>
+            <tr>
+              <td>
+                <p>Tekst desno spodaj:</p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2"><input type="text" maxlength="24"
+              style="width:800px;" ng-model="PA0[0].TEKST11"></td>
+            </tr>
+          </table><br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <p><button ng-click="sendDataDel(uporabnik)" ng-show=
+          "disabledDokuDelShow" ng-disabled="disabledDokuDel"
+          ng-init="count=0">{{"zbrisi moje podatke"}}</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
